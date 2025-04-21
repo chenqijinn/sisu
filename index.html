@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>春节·中国年 - 四川外国语大学文化专题</title>
+    <style>
+        :root {
+            --primary-red: #e60000;
+            --gold: #FFD700;
+            --dark-red: #990000;
+        }
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f3e9;
+            color: #333;
+            transition: all 0.3s;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: var(--gold);
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .logo img {
+            height: 60px;
+            margin: 0 20px;
+        }
+        .lantern {
+            font-size: 24px;
+            animation: swing 3s infinite alternate;
+            display: inline-block;
+        }
+        @keyframes swing {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        .nav {
+            background-color: var(--dark-red);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .nav-item:hover, .nav-item.active {
+            background-color: var(--gold);
+            color: var(--dark-red);
+            transform: translateY(-3px);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--primary-red);
+        }
+        .section-title {
+            color: var(--primary-red);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 28px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .media-container {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .media-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .media-item:hover {
+            transform: translateY(-5px);
+        }
+        .media-item img, .media-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .food-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff9f9;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-red);
+        }
+        .food-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .language-card {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .language-card:hover {
+            background-color: #fff0f0;
+            transform: scale(1.05);
+        }
+        .play-btn {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .play-btn:hover {
+            background-color: var(--dark-red);
+        }
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .page-btn {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .page-btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background-color: var(--dark-red);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        .social-icons {
+            margin: 20px 0;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+        .lang-switcher {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            z-index: 200;
+            background-color: rgba(230, 0, 0, 0.9);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            margin: 0 3px;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background-color: var(--gold);
+            color: var(--dark-red);
+        }
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-item {
+                margin: 5px 0;
+            }
+            .lang-switcher {
+                top: 100px;
+                right: 10px;
+                padding: 5px;
+            }
+            .lang-btn {
+                padding: 3px 6px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 语言切换器 -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="ko">한국어</button>
+        <button class="lang-btn" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+        <button class="lang-btn" data-lang="fr">Français</button>
+        <button class="lang-btn" data-lang="de">Deutsch</button>
+        <button class="lang-btn" data-lang="ru">Русский</button>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <img src="https://www.sisu.edu.cn/images/logo.png" alt="四川外国语大学校徽">
+            <span class="lantern">🏮</span>
+            <h1 data-i18n="title">春节·中国年</h1>
+            <span class="lantern">🏮</span>
+            <img src="https://www.sisu.edu.cn/images/logo.png" alt="四川外国语大学校徽">
+        </div>
+        <p data-i18n="subtitle">海纳百川 学贯中外 | 以语言为桥，传春节之美</p>
+    </header>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#origin" class="nav-item active" data-i18n="nav1">春节溯源</a>
+            <a href="#customs" class="nav-item" data-i18n="nav2">南北习俗</a>
+            <a href="#food" class="nav-item" data-i18n="nav3">舌尖年味</a>
+            <a href="#language" class="nav-item" data-i18n="nav4">多语贺春</a>
+            <a href="#global" class="nav-item" data-i18n="nav5">全球庆典</a>
+            <a href="#sisu-event" class="nav-item" data-i18n="nav6">川外活动</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="origin" class="section">
+            <h2 class="section-title" data-i18n="section1">一、春节溯源</h2>
+            <p data-i18n="origin1">春节，又称农历新年，是中国最重要的传统节日，已有4000多年历史。据《诗经》《唐书》记载，春节起源于殷商时期的岁首祭祀活动，汉代正式定型为全国性节日。</p>
+            
+            <div class="grid-2">
+                <div>
+                    <h3 data-i18n="origin2">年兽传说</h3>
+                    <p data-i18n="origin3">相传古时有一种叫"年"的怪兽，每逢除夕便出来吃人。后来人们发现年兽害怕红色和响声，于是有了贴红对联、放鞭炮的习俗。</p>
+                    <h3 data-i18n="origin4">文化内涵</h3>
+                    <p data-i18n="origin5">春节体现了中国人"天人合一"的哲学思想，融合了祭祀祖先、除旧布新、迎禧接福等多元文化内涵，与川外"海纳百川"的校训精神高度契合。</p>
+                </div>
+                <div>
+                      <div class="container">
+              <iframe 
+            src="https://player.bilibili.com/player.html?bvid=BV1TKf2YaEs1&page=1&high_quality=1&t=46.8"
+            scrolling="no"
+            allowfullscreen>
+        </iframe>
+         </div>
+                    <p style="text-align: center; margin-top: 10px;" data-i18n="origin6">《五千年的春节》纪录片</p>
+                </div>
+    </div>
+
+         <div class="media-container">
+            <div class="media-item">
+                    <img src="1.jpg" alt="古代春节祭祀场景">
+                    <p data-i18n="origin7">汉代画像砖中的春节祭祀</p>
+                </div>
+                <div class="media-item">
+                    <img src="2.jpg" alt="年兽传说插图">
+                    <p data-i18n="origin8">年兽传说民间绘画</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="customs" class="section">
+            <h2 class="section-title" data-i18n="section2">二、南北习俗</h2>
+            <p data-i18n="customs1">中国地域辽阔，南北春节习俗各具特色，但都寄托着人们对美好生活的向往。</p>
+            
+            <div class="grid-2">
+                <div>
+                    <h3 data-i18n="customs2">北方习俗</h3>
+                    <ul>
+                        <li data-i18n="customs3">腊月二十三祭灶王</li>
+                        <li data-i18n="customs4">除夕守岁吃饺子</li>
+                        <li data-i18n="customs5">初一拜年压岁钱</li>
+                        <li data-i18n="customs6">正月十五闹元宵</li>
+                    </ul>
+                    <div class="media-item">
+                        <img src="3.jpg" alt="北方春节庙会">
+                        <p data-i18n="customs7">北京地坛庙会盛况</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 data-i18n="customs8">南方习俗</h3>
+                    <ul>
+                        <li data-i18n="customs9">腊月二十四扫尘</li>
+                        <li data-i18n="customs10">初一早茶配年糕</li>
+                        <li data-i18n="customs11">舞龙舞狮庆新春</li>
+                        <li data-i18n="customs12">花市迎春买年花</li>
+                    </ul>
+                    <div class="media-item">
+                        <img src="4.jpg" alt="南方舞龙表演">
+                        <p data-i18n="customs13">广东佛山舞龙表演</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 data-i18n="customs14">重庆特色</h3>
+            <p data-i18n="customs15">作为川外所在地，重庆的春节融合了巴渝文化与移民文化特色：</p>
+            <ul>
+                <li data-i18n="customs16">磁器口古镇庙会（<a href="https://www.cqspb.gov.cn" target="_blank">沙坪坝区文旅局官网</a>）</li>
+                <li data-i18n="customs17">火锅团圆宴</li>
+                <li data-i18n="customs18">川江号子表演</li>
+            </ul>
+            <div class="media-container">
+                <div class="media-item">
+                    <img src="5.jpg" alt="磁器口庙会">
+                    <p data-i18n="customs19">磁器口春节庙会人潮</p>
+                </div>
+                   <div class="media-item">
+                    <img src="6.jpg" alt="川外春节特别节目">
+                    <p data-i18n="customs19">留学生纳福</p>
+                </div>   
+           </div>
+        </section>
+
+        <section id="food" class="section">
+            <h2 class="section-title" data-i18n="section3">三、舌尖年味</h2>
+            <p data-i18n="food1">春节美食不仅满足味蕾，更蕴含吉祥寓意，是中华饮食文化的集中体现。</p>
+            
+            <div class="food-item">
+                <img src="7.jpg" alt="饺子">
+                <div>
+                    <h3 data-i18n="food2">饺子</h3>
+                    <p data-i18n="food3">北方春节必备，形似元宝象征财富。川外厨艺社每年举办"国际学生包饺子大赛"。</p>
+<body>
+    <a href="https://www.bilibili.com/video/BV14TcmeqEzD?t=10.9" target="_blank" class="bilibili-btn">
+        观看教学视频
+    </a>
+</body>
+
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="9.jpg" alt="年糕">
+                <div>
+                    <h3 data-i18n="food5">年糕</h3>
+                    <p data-i18n="food6">南方特色，"年年高升"的吉祥寓意。川外食堂春节期间供应多种口味年糕。</p>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="10.jpg" alt="火锅">
+                <div>
+                    <h3 data-i18n="food7">重庆火锅</h3>
+                   < p data-i18n="food8">红红火火象征兴旺，团圆火锅体现巴渝热情。了解更多：<a href="https://baike.baidu.com/item/%E9%87%8D%E5%BA%86%E7%81%AB%E9%94%85/1284133" target="_blank">重庆火锅（百度百科）</a></p>
+               </div>
+            </div>
+        </section>
+
+        <section id="language" class="section">
+            <h2 class="section-title" data-i18n="section4">四、多语贺春</h2>
+            <html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多语言新年快乐</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f1e9;
+            text-align: center;
+            padding: 20px;
+            background-image: url('https://img.freepik.com/free-vector/chinese-new-year-pattern-background_53876-93719.jpg');
+            background-size: cover;
+            color: #d32f2f;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #d32f2f;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .greeting-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .greeting-item {
+            background-color: #fff9c4;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .greeting-item:hover {
+            transform: translateY(-5px);
+        }
+        .language {
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 5px;
+        }
+        .greeting {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        .audio-icon {
+            margin-right: 5px;
+        }
+        .decoration {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decoration">🎉 🧧 🏮</div>
+        <h1>新年快乐!</h1>
+        <div class="decoration">🏮 🧧 🎉</div>
+        
+        <div class="greeting-box">
+            <!-- 中文 -->
+            <div class="greeting-item">
+                <div class="language">中文 (Chinese)</div>
+                <div class="greeting">新年快乐</div>
+                <button onclick="playAudio('zh')">
+                    <span class="audio-icon">🔊</span> 播放
+                </button>
+            </div>
+            
+            <!-- 英语 -->
+            <div class="greeting-item">
+                <div class="language">English</div>
+                <div class="greeting">Happy New Year</div>
+                <button onclick="playAudio('en')">
+                    <span class="audio-icon">🔊</span> Play
+                </button>
+            </div>
+            
+            <!-- 韩语 -->
+            <div class="greeting-item">
+                <div class="language">한국어 (Korean)</div>
+                <div class="greeting">새해 복 많이 받으세요</div>
+                <button onclick="playAudio('ko')">
+                    <span class="audio-icon">🔊</span> 재생
+                </button>
+            </div>
+            
+            <!-- 日语 -->
+            <div class="greeting-item">
+                <div class="language">日本語 (Japanese)</div>
+                <div class="greeting">あけましておめでとうございます</div>
+                <button onclick="playAudio('ja')">
+                    <span class="audio-icon">🔊</span> 再生
+                </button>
+            </div>
+            
+            <!-- 泰语 -->
+            <div class="greeting-item">
+                <div class="language">ไทย (Thai)</div>
+                <div class="greeting">สวัสดีปีใหม่</div>
+                <button onclick="playAudio('th')">
+                    <span class="audio-icon">🔊</span> เล่น
+                </button>
+            </div>
+            
+            <!-- 法语 -->
+            <div class="greeting-item">
+                <div class="language">Français (French)</div>
+                <div class="greeting">Bonne année</div>
+                <button onclick="playAudio('fr')">
+                    <span class="audio-icon">🔊</span> Jouer
+                </button>
+            </div>
+            
+            <!-- 德语 -->
+            <div class="greeting-item">
+                <div class="language">Deutsch (German)</div>
+                <div class="greeting">Frohes neues Jahr</div>
+                <button onclick="playAudio('de')">
+                    <span class="audio-icon">🔊</span> Abspielen
+                </button>
+            </div>
+            
+            <!-- 俄语 -->
+            <div class="greeting-item">
+                <div class="language">Русский (Russian)</div>
+                <div class="greeting">С Новым годом</div>
+                <button onclick="playAudio('ru')">
+                    <span class="audio-icon">🔊</span> Воспроизвести
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playAudio(language) {
+            // 创建音频对象
+            const audio = new Audio();
+            
+            // 根据语言选择不同的音频文件
+            switch(language) {
+                case 'zh':
+                    audio.src = '中文.aac';
+                    break;
+                case 'en':
+                    audio.src = '英语.m4a';
+                    break;
+                case 'ko':
+                    audio.src = '韩语.m4a';
+                    break;
+                case 'ja':
+                    audio.src = '日语.m4a';
+                    break;
+                case 'th':
+                    audio.src = '泰语.m4a';
+                    break;
+                case 'fr':
+                    audio.src = '法语.m4a';
+                    break;
+                case 'de':
+                    audio.src = '德语.m4a';
+                    break;
+                case 'ru':
+                    audio.src = '俄语.m4a';
+                    break;
+                default:
+                    alert('音频未找到');
+                    return;
+            }
+            
+            // 播放音频
+            audio.play().catch(e => {
+                console.error('播放失败:', e);
+                alert('无法播放音频，请检查浏览器设置或网络连接');
+            });
+        }
+    </script>
+</body>
+
+        <section id="global" class="section">
+            <h2 class="section-title" data-i18n="section5">五、全球庆典</h2>
+            <p data-i18n="global1">随着中国文化走出去，春节已成为世界性节日：</p>
+            
+            <div class="grid-2">
+                <div>
+                    <h3 data-i18n="global2">纽约</h3>
+                    <p data-i18n="global3">时代广场春节倒计时，帝国大厦点亮中国红</p>
+                    <div class="media-item">
+                        <img src="11.jpg" alt="纽约春节">
+                        <p data-i18n="global4">纽约唐人街舞狮表演</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 data-i18n="global5">伦敦</h3>
+                    <p data-i18n="global6">特拉法加广场春节庆典，欧洲规模最大</p>
+                    <div class="media-item">
+                        <img src="12.jpg" alt="伦敦春节">
+                        <p data-i18n="global7">伦敦春节游行</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 data-i18n="global8">川外国际合作</h3>
+            <p data-i18n="global9">我校与全球多所高校合作举办春节活动：</p>
+            <ul>
+                <li data-i18n="global10">澳大利亚悉尼科技大学春节联欢</li>
+                <li data-i18n="global11">韩国又松大学中国文化周</li>
+                <li data-i18n="global12">维也纳孔子学院春晚</li>
+            </ul>
+        </section>
+
+        <section id="sisu-event" class="section">
+            <h2 class="section-title" data-i18n="section6">六、川外春节活动</h2>
+            <p data-i18n="event1">四川外国语大学充分发挥外语优势，举办丰富多彩的春节文化活动：</p>
+            
+            <div class="media-container">
+                <div class="media-item">
+                    <img src="13.jpg" alt="川外春节活动">
+                    <p data-i18n="event2">国际学生舞龙队表演</p>
+                </div>
+                <div class="media-item">
+                    <img src="14.jpg" alt="多语种春联">
+                    <p data-i18n="event3">22语种春联书写大赛</p>
+                </div>
+            </div>
+
+            <h3 data-i18n="event4">2025年春节活动预告</h3>
+            <ul>
+                <li data-i18n="event5">1月20日：国际美食节（西区食堂）</li>
+                <li data-i18n="event6">1月25日：多语种春节晚会（大礼堂）</li>
+                <li data-i18n="event7">2月1日：传统文化体验日（图书馆广场）</li>
+            </ul>
+            <p data-i18n="event8">详情请关注：<a href="https://www.sisu.edu.cn" target="_blank">四川外国语大学官网</a></p>
+        </section>
+
+        <div class="pagination">
+            <button class="page-btn" data-i18n="page1">← 上一页：冬至专题</button>
+            <button class="page-btn" data-i18n="page2">下一页：元宵节特辑 →</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-weixin"></i></a>
+            <a href="#"><i class="fab fa-weibo"></i></a>
+            <a href="#"><i class="fab fa-qq"></i></a>
+        </div>
+        <p data-i18n="footer1">© 2025 四川外国语大学文化传播中心 | 地址：重庆市沙坪坝区壮志路33号</p>
+        <p data-i18n="footer2">电话：023-65385206 | 邮箱：culture@sisu.edu.cn</p>
+        <p data-i18n="footer3">部分素材由SISU国际学生文化交流协会提供</p>
+    </footer>
+
+    <script>
+        // 多语言支持
+        const i18n = {
+            zh: {
+                title: "春节·中国年",
+                subtitle: "海纳百川 学贯中外 | 以语言为桥，传春节之美",
+                nav1: "春节溯源",
+                nav2: "南北习俗",
+                nav3: "舌尖年味",
+                nav4: "多语贺春",
+                nav5: "全球庆典",
+                nav6: "川外活动",
+                section1: "一、春节溯源",
+                origin1: "春节，又称农历新年，是中国最重要的传统节日，已有4000多年历史。据《诗经》《唐书》记载，春节起源于殷商时期的岁首祭祀活动，汉代正式定型为全国性节日。",
+                origin2: "年兽传说",
+                origin3: "相传古时有一种叫\"年\"的怪兽，每逢除夕便出来吃人。后来人们发现年兽害怕红色和响声，于是有了贴红对联、放鞭炮的习俗。",
+                origin4: "文化内涵",
+                origin5: "春节体现了中国人\"天人合一\"的哲学思想，融合了祭祀祖先、除旧布新、迎禧接福等多元文化内涵，与川外\"海纳百川\"的校训精神高度契合。",
+                origin6: "《春节的历史演变》纪录片片段",
+                origin7: "汉代画像砖中的春节祭祀",
+                origin8: "年兽传说民间绘画",
+                section2: "二、南北习俗",
+                customs1: "中国地域辽阔，南北春节习俗各具特色，但都寄托着人们对美好生活的向往。",
+                customs2: "北方习俗",
+                customs3: "腊月二十三祭灶王",
+                customs4: "除夕守岁吃饺子",
+                customs5: "初一拜年压岁钱",
+                customs6: "正月十五闹元宵",
+                customs7: "北京地坛庙会盛况",
+                customs8: "南方习俗",
+                customs9: "腊月二十四扫尘",
+                customs10: "初一早茶配年糕",
+                customs11: "舞龙舞狮庆新春",
+                customs12: "花市迎春买年花",
+                customs13: "广东佛山舞龙表演",
+                customs14: "重庆特色",
+                customs15: "作为川外所在地，重庆的春节融合了巴渝文化与移民文化特色：",
+                customs16: "磁器口古镇庙会（<a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">沙坪坝区文旅局官网</a>）",
+                customs17: "火锅团圆宴",
+                customs18: "川江号子表演",
+                customs19: "磁器口春节庙会人潮",
+                customs20: "您的浏览器不支持视频播放",
+                customs21: "川外留学生体验写春联",
+                section3: "三、舌尖年味",
+                food1: "春节美食不仅满足味蕾，更蕴含吉祥寓意，是中华饮食文化的集中体现。",
+                food2: "饺子",
+                food3: "北方春节必备，形似元宝象征财富。川外厨艺社每年举办\"国际学生包饺子大赛\"。",
+                food4: "观看教学视频",
+                food5: "年糕",
+                food6: "南方特色，\"年年高升\"的吉祥寓意。川外食堂春节期间供应多种口味年糕。",
+                food7: "重庆火锅",
+                food8: "红红火火象征兴旺，团圆火锅体现巴渝热情。了解更多：<a href=\"https://www.cqhotpot.com\" target=\"_blank\">重庆火锅协会</a>",
+                section4: "四、多语贺春",
+                language1: "作为外语特色高校，川外师生用22种语言传递春节祝福：",
+                language2: "播放",
+                language3: "了解更多春节文化外译研究：<a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">川外科研处《外国语文》期刊</a>",
+                section5: "五、全球庆典",
+                global1: "随着中国文化走出去，春节已成为世界性节日：",
+                global2: "纽约",
+                global3: "时代广场春节倒计时，帝国大厦点亮中国红",
+                global4: "纽约唐人街舞狮表演",
+                global5: "伦敦",
+                global6: "特拉法加广场春节庆典，欧洲规模最大",
+                global7: "伦敦春节游行",
+                global8: "川外国际合作",
+                global9: "我校与全球多所高校合作举办春节活动：",
+                global10: "澳大利亚悉尼科技大学春节联欢",
+                global11: "韩国又松大学中国文化周",
+                global12: "维也纳孔子学院春晚",
+                section6: "六、川外春节活动",
+                event1: "四川外国语大学充分发挥外语优势，举办丰富多彩的春节文化活动：",
+                event2: "国际学生舞龙队表演",
+                event3: "22语种春联书写大赛",
+                event4: "2025年春节活动预告",
+                event5: "1月20日：国际美食节（西区食堂）",
+                event6: "1月25日：多语种春节晚会（大礼堂）",
+                event7: "2月1日：传统文化体验日（图书馆广场）",
+                event8: "详情请关注：<a href=\"https://www.sisu.edu.cn\" target=\"_blank\">四川外国语大学官网</a>",
+                page1: "← 上一页：冬至专题",
+                page2: "下一页：元宵节特辑 →",
+                footer1: "© 2025 四川外国语大学文化传播中心 | 地址：重庆市沙坪坝区壮志路33号",
+                footer2: "电话：023-65385206 | 邮箱：culture@sisu.edu.cn",
+                footer3: "部分素材由SISU国际学生文化交流协会提供"
+            },
+          en: {
+                title: "Spring Festival · Chinese New Year",
+                subtitle: "Inclusiveness & Global Vision | Bridging Cultures through Language",
+                nav1: "Origins",
+                nav2: "Customs",
+                nav3: "Cuisine",
+                nav4: "Multilingual",
+                nav5: "Global",
+                nav6: "SISU Events",
+                section1: "1. Origins",
+                origin1: "The Spring Festival, also known as Chinese Lunar New Year, is China's most important traditional festival with over 4,000 years of history. According to records in The Book of Songs and Tang Dynasty documents, it originated from sacrificial ceremonies at the beginning of the year during the Shang Dynasty and became a nationwide festival in the Han Dynasty.",
+                origin2: "Nian Legend",
+                origin3: "Legend tells of a monster called 'Nian' that would devour people on New Year's Eve. People later discovered Nian feared the color red and loud noises, leading to the customs of red couplets and firecrackers.",
+                origin4: "Cultural Essence",
+                origin5: "The festival embodies the Chinese philosophy of 'harmony between heaven and humanity', integrating ancestor worship, renewal, and fortune welcoming - resonating with SISU's motto 'Inclusiveness & Global Vision'.",
+                origin6: "Documentary: Evolution of Spring Festival",
+                origin7: "Spring Festival sacrifice in Han Dynasty brick carvings",
+                origin8: "Folk painting of Nian legend",
+                section2: "2. Regional Customs",
+                customs1: "China's vast territory nurtures diverse Spring Festival customs across regions, all expressing hopes for a better life.",
+                customs2: "Northern Customs",
+                customs3: "Day 23: Kitchen God worship",
+                customs4: "New Year's Eve: Dumplings & staying up late",
+                customs5: "Day 1: Greetings & red envelopes",
+                customs6: "Day 15: Lantern Festival",
+                customs7: "Beijing Ditan Temple Fair",
+                customs8: "Southern Customs",
+                customs9: "Day 24: House cleaning",
+                customs10: "Day 1: Morning tea with rice cakes",
+                customs11: "Dragon/lion dances",
+                customs12: "Flower markets",
+                customs13: "Foshan dragon dance (Guangdong)",
+                customs14: "Chongqing Features",
+                customs15: "As SISU's hometown, Chongqing blends Ba-Yu culture with immigrant traditions:",
+                customs16: "Ciqikou Ancient Town Fair (<a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">Shapingba Culture/Tourism Bureau</a>)",
+                customs17: "Hotpot reunion feast",
+                customs18: "Chuanjiang Haozi performances",
+                customs19: "Ciqikou Temple Fair crowds",
+                customs20: "Your browser doesn't support video",
+                customs21: "SISU international students writing couplets",
+                section3: "3. Festival Cuisine",
+                food1: "Spring Festival foods carry auspicious meanings beyond taste, representing the essence of Chinese culinary culture.",
+                food2: "Dumplings",
+                food3: "Northern staple resembling ancient currency. SISU hosts annual 'International Dumpling Making Competition'.",
+                food4: "Watch tutorial",
+                food5: "Rice Cake",
+                food6: "Southern specialty symbolizing 'annual promotion'. SISU canteen serves various flavors during the festival.",
+                food7: "Chongqing Hotpot",
+                food8: "Symbolizing prosperity and reunion. Learn more: <a href=\"https://www.cqhotpot.com\" target=\"_blank\">Chongqing Hotpot Association</a>",
+                section4: "4. Multilingual Greetings",
+                language1: "As a languages-specialized university, SISU presents Spring Festival greetings in 22 languages:",
+                language2: "Play",
+                language3: "Learn about cultural translation research: <a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">SISU Journal of Foreign Languages</a>",
+                section5: "5. Global Celebrations",
+                global1: "With Chinese culture going global, Spring Festival has become worldwide:",
+                global2: "New York",
+                global3: "Times Square countdown, Empire State Building in red",
+                global4: "Lion dance in Chinatown",
+                global5: "London",
+                global6: "Trafalgar Square celebration (Europe's largest)",
+                global7: "London parade",
+                global8: "SISU Global Partners",
+                global9: "Co-hosted events with international universities:",
+                global10: "UTS Sydney Chinese New Year",
+                global11: "Woosong University Culture Week",
+                global12: "Vienna Confucius Institute Gala",
+                section6: "6. SISU Events",
+                event1: "SISU leverages language strengths to host diverse Spring Festival activities:",
+                event2: "International students' dragon dance",
+                event3: "22-language couplets competition",
+                event4: "2025 Event Preview",
+                event5: "Jan 20: International Food Festival (West Canteen)",
+                event6: "Jan 25: Multilingual Gala (Auditorium)",
+                event7: "Feb 1: Traditional Culture Day (Library Square)",
+                event8: "Details: <a href=\"https://www.sisu.edu.cn\" target=\"_blank\">SISU Official Website</a>",
+                page1: "← Previous: Winter Solstice",
+                page2: "Next: Lantern Festival →",
+                footer1: "© 2025 SISU Cultural Communication Center | Address: 33 Zhuangzhi Road, Shapingba, Chongqing",
+                footer2: "Tel: 023-65385206 | Email: culture@sisu.edu.cn",
+                footer3: "Materials provided by SISU International Student Association"
+            },
+            // 其他语言翻译（韩语、日语、泰语、法语、德语、俄语）可以按相同格式添加
+            ko: {
+                title: "춘제·중국 설날",
+                subtitle: "포용과 글로벌 비전 | 언어로 문화를 연결하다",
+                nav1: "기원",
+                nav2: "풍습",
+                nav3: "음식",
+                nav4: "다국어",
+                nav5: "글로벌",
+                nav6: "SISU 행사",
+                section1: "1. 기원",
+                origin1: "춘제는 중국에서 가장 중요한 전통 명절로 4000년 이상의 역사를 가지고 있습니다. 시경과 당나라 문서에 따르면 상나라 시절의 제사 의식에서 유래되었으며 한나라 때 전국적인 명절로 자리잡았습니다.",
+                origin2: "년(年) 괴물 전설",
+                origin3: "설날 전야에 사람을 잡아먹는 '년'이라는 괴물의 전설에서 비롯되었습니다. 사람들은 년이 붉은색과 큰 소리를 두려워한다는 것을 발견하고 붉은 대련과 폭죽의 풍습이 생겼습니다.",
+                origin4: "문화적 본질",
+                origin5: "천지인 합일의 철학을 구현하는 이 명절은 SISU의 교훈 '포용과 글로벌 비전'과도 조화를 이룹니다.",
+                origin6: "다큐멘터리: 춘제의 진화",
+                origin7: "한나라 벽돌 조각의 춘제 제사",
+                origin8: "년 괴물 전설 민화",
+                section2:  "2. 지역별 풍습",
+                customs1:"광활한 중국 영토는 지역마다 다양한 춘절 풍습을 낳았으며 모두 더 나은 삶에 대한 희망을 표현합니다.",
+                customs2: "북방 풍습",
+                customs3: "23일: 조왕신 제사",
+                customs4: "설날 전야: 만두 먹기와 새벽까지 깨어있기",
+                customs5:"1일: 새해 인사와 홍빠오(적포)",
+                customs6:  "15일: 원소절(등불 축제)",
+                customs7: "베이징 디탄 사원 행사",
+                customs8: "남방 풍습",
+                customs9: "24일: 대청소",
+                customs10:  "1일: 차와 녹차 케이크로 아침 식사",
+                customs11:  "용/사자 춤",
+                customs12:"꽃 시장",
+                customs13: "포산 용춤(광둥)",
+                customs14: "충칭 특색",
+                customs15: "SISU의 고향인 충칭은 바-유 문화와 이민자 전통이 조화를 이룹니다:",
+                customs16: "치치쿠 고을 장(<a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">사핑바 문화/관광국</a>)",
+                customs17: "훠궈(핫팟) 단합 회식",
+                customs18: "촨장 하오쯔(강가의 노래) 공연",
+                customs19:"치치쿠 사원 행사 인파",
+                customs20: "귀하의 브라우저는 비디오를 지원하지 않습니다",
+                customs21: "SISU 유학생들의 춘련 쓰기",
+                section3:"3. 명절 음식",
+                food1: "춘절 음식은 맛 이상의 상서로운 의미를 지니며 중국 요리 문화의 정수를 대표합니다.",
+                food2: "만두",
+                food3:  "북방 주식으로 고대 화폐를 닮았습니다. SISU는 매년 '국제 만두 만들기 대회'를 개최합니다.",
+                food4:"튜토리얼 보기",
+                food5:  "녹차 케이크",
+                food6:  "남방 특색으로 '해마다 높이 오른다'는 상징. SISU 구내식당은 명절 기간 다양한 맛을 제공합니다.",
+                food7: "충칭 훠궈",
+                food8:  "번영과 단합을 상징합니다. 자세히 보기: <a href=\"https://www.cqhotpot.com\" target=\"_blank\">충칭 훠궈 협회</a>",
+                section4:  "4. 다국어 새해 인사",
+                language1:  "외국어 특화 대학으로서 SISU는 22개 언어로 춘절 인사를 전합니다:",
+                language2: "재생",
+                language3:  "문화 번역 연구 알아보기: <a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">SISU 외국어 학술지</a>",
+                section5: "5. 글로벌 축하",
+                global1: "중국 문화의 세계화와 함께 춘절은 전세계적인 명절이 되었습니다:",
+                global2:  "뉴욕",
+                global3: "타임스퀘어 카운트다운, 엠파이어 스테이트 빌딩 적색 조명",
+                global4:  "차이나타운 사자 춤",
+                global5: "런던",
+                global6: "트라팔가 광장 축제(유럽 최대)",
+                global7:  "런던 퍼레이드",
+                global8:  "SISU 글로벌 파트너",
+                global9: "국제 대학과 공동 주최 행사:",
+                global10: "UTS 시드니 중국 설날",
+                global11: "우송대학교 문화주간",
+                global12: "비엔나 공자학원 갈라",
+                section6: "6. SISU 행사",
+                event1: "SISU는 언어 강점을 활용해 다양한 춘절 활동을 주최합니다:",
+                event2:  "유학생 용춤",
+                event3:  "22개 언어 춘련 대회",
+                event4: "2025년 행사 예고",
+                event5: "1월 20일: 국제 음식 축제(서쪽 구내식당)",
+                event6: "1월 25일: 다국어 갈라(강당)",
+                event7: "2월 1일: 전통 문화의 날(도서관 광장)",
+                event8:  "세부 사항: <a href=\"https://www.sisu.edu.cn\" target=\"_blank\">SISU 공식 웹사이트</a>",
+                page1: "← 이전: 동지",
+                page2:  "다음: 원소절 →",
+                footer1: "© 2025 SISU 문화 커뮤니케이션 센터 | 주소: 충칭 사핑바 좡즈 로드 33",
+                footer2:"전화: 023-65385206 | 이메일: culture@sisu.edu.cn",
+                footer3: "자료 제공: SISU 유학생 협회"
+            },
+            ja: {
+    title: "春節・中国の旧正月",
+    subtitle: "海を容れ百家を学ぶ | 言語を橋として、春節の美を伝える",
+    nav1: "春節の起源",
+    nav2: "南北の習俗", 
+    nav3: "新春の味覚",
+    nav4: "多言語新年の挨拶",
+    nav5: "世界の祝賀",
+    nav6: "川外のイベント",
+    section1: "一、春節の起源",
+    origin1: "春節、旧正月とも呼ばれ、中国で最も重要な伝統祝日で4000年以上の歴史があります。『詩経』『唐書』によれば、殷商時代の年始祭祀から起源し、漢代に全国的な祝日として定着しました。",
+    origin2: "年獣伝説",
+    origin3: "昔、”年”という怪物が大晦日に人を食らうと伝えられます。人々は赤色と音を恐れる性質を利用し、赤い対聯と爆竹の習俗が生まれました。",
+    origin4: "文化的本質",
+    origin5: "「天人合一」の哲学思想を体現し、祖先祭祀・除旧布新・福を迎える多様な文化要素が融合。四川外国語大学の「海容百家」精神と共鳴します。",
+    origin6: "『春節の歴史変遷』ドキュメンタリー",
+    origin7: "漢代画像磚に描かれた春節祭祀",
+    origin8: "年獣伝説の民間絵画",
+    section2: "二、南北の習俗",
+    customs1: "広大な中国では南北で異なる春節習俗が見られますが、どれも幸福への願いが込められています。",
+    customs2: "北方の習俗",
+    customs3: "旧暦12月23日：かまど神を祭る",
+    customs4: "大晦日：餃子を食べ夜更かし",
+    customs5: "元日：年始回りとお年玉",
+    customs6: "元宵節（旧暦1月15日）",
+    customs7: "北京地壇廟会の様子", 
+    customs8: "南方の習俗",
+    customs9: "旧暦12月24日：大掃除",
+    customs10: "元日：朝茶と餅",
+    customs11: "龍舞・獅子舞",
+    customs12: "花市で春を迎える",
+    customs13: "広東仏山の龍舞",
+    customs14: "重慶の特色",
+    customs15: "四川外国語大学所在地・重慶の春節は巴渝文化と移民文化が融合：",
+    customs16: "磁器口古鎮廟会（<a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">沙坪坝区文化観光局公式サイト</a>）",
+    customs17: "火鍋団欒宴",
+    customs18: "川江号子（川船の労働歌）",
+    customs19: "磁器口春節廟会の人混み",
+    customs20: "ブラウザが動画をサポートしていません",
+    customs21: "川外留学生の書道体験",
+    section3: "三、新春の味覚",
+    food1: "春節料理は味覚を満たすだけでなく、吉祥の意味を持つ中華飲食文化の真髄です。",
+    food2: "餃子",
+    food3: "北方の必須料理。古代貨幣に似た形は富を象徴。川外料理部主催「国際学生餃子作り大会」を毎年開催。",
+    food4: "動画チュートリアル",
+    food5: "餅",
+    food6: "南方の名物。「年々高昇」を意味。川外学食では期間中多様な餅を提供。",
+    food7: "重慶火鍋",
+    food8: "赤々とした鍋は繁栄を、団欒は巴渝の情熱を体現。詳細は<a href=\"https://www.cqhotpot.com\" target=\"_blank\">重慶火鍋協会</a>へ",
+    section4: "四、多言語新年の挨拶", 
+    language1: "外国語教育の特色を活かし、川外の師生が22言語で春節の祝福を伝えます：",
+    language2: "再生",
+    language3: "春節文化の翻訳研究：<a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">川外学術処『外国語文』期刊</a>",
+    section5: "五、世界の祝賀",
+    global1: "中国文化の国際化に伴い、春節は世界的な祝日となりました：",
+    global2: "ニューヨーク",
+    global3: "タイムズスクエアカウントダウン、エンパイアステートビル赤色点灯",
+    global4: "チャイナタウン獅子舞",
+    global5: "ロンドン",
+    global6: "トラファルガー広場祝賀（欧州最大規模）",
+    global7: "春節パレード",
+    global8: "川外国際協力",
+    global9: "世界の大学と共同開催する春節イベント：",
+    global10: "シドニー工科大学春節祭",
+    global11: "韓国又松大学中国文化週間",
+    global12: "ウィーン孔子学院春節ガラ",
+    section6: "六、川外春節イベント",
+    event1: "四川外国語大学は語学の強みを活かし、多彩な春節文化イベントを開催：",
+    event2: "留学生龍舞隊パフォーマンス",
+    event3: "22言語春聯書道コンテスト",
+    event4: "2025年旧正月イベント予告",
+    event5: "1月20日：国際美食祭（西キャンパス食堂）",
+    event6: "1月25日：多言語春節ガラ（講堂）",
+    event7: "2月1日：伝統文化体験デー（図書館広場）",
+    event8: "詳細は<a href=\"https://www.sisu.edu.cn\" target=\"_blank\">四川外国語大学公式サイト</a>へ",
+    page1: "← 前回：冬至特集",
+    page2: "次回：元宵節特集 →",
+    footer1: "© 2025 四川外国語大学文化伝播センター | 住所：重慶市沙坪坝区壮志路33号",
+    footer2: "電話：023-65385206 | メール：culture@sisu.edu.cn",
+    footer3: "素材提供：SISU国際学生文化交流協会"
+         },
+            th: {
+                title: "ตรุษจีน · ปีใหม่จีน",
+                subtitle: "包容และวิสัยทัศน์ระดับโลก | เชื่อมโยงวัฒนธรรมผ่านภาษา",
+                nav1: "ต้นกำเนิด",
+                nav2: "ประเพณี",
+                nav3: "อาหาร",
+                nav4: "หลายภาษา",
+                nav5: "ระดับโลก",
+                nav6: "กิจกรรม SISU",
+                section1: "1. ต้นกำเนิด",
+                origin1: "ตรุษจีนเป็นเทศกาลดั้งเดิมที่สำคัญที่สุดของจีน มีประวัติศาสตร์ยาวนานกว่า 4,000 ปี ตามบันทึกในหนังสือซือจิงและเอกสารสมัยราชวงศ์ถัง มีต้นกำเนิดมาจากพิธีบูชาต้นปีในสมัยราชวงศ์ซาง และกลายเป็นเทศกาลระดับชาติในสมัยราชวงศ์ฮั่น",
+                origin2: "ตำนานปีศาจเหนียน",
+                origin3: "ตำนานเล่าถึงปีศาจชื่อ 'เหนียน' ที่จะมากินคนในคืนปีใหม่ ต่อมาคนพบว่าเหนียนกลัวสีแดงและเสียงดัง จึงเกิดประเพณีติดคู่คำแดงและจุดประทัด",
+                origin4: "แก่นแท้ทางวัฒนธรรม",
+                origin5: "เทศกาลนี้แสดงถึงปรัชญาจีนเรื่อง 'ความสามัคคีระหว่างสวรรค์และมนุษย์' สอดคล้องกับคำขวัญของ SISU '包容และวิสัยทัศน์ระดับโลก'",
+                origin6: "สารคดี: วิวัฒนาการของตรุษจีน",
+                origin7: "พิธีตรุษจีนในภาพสลักอิฐสมัยฮั่น",
+                origin8: "ภาพวาดพื้นบ้านตำนานเหนียน",
+                section2: "สอง、ประเพณีของภาษาเหนือและภาษาใต้",
+                customs1: "ประเทศจีนมีพื้นที่ใหญ่กว้าง และประเพณีของเทศกาลวันตรุษจีนในภาคเหนือและภาคใต้มีความเป็นเอกลักษณะของตนเอง แต่ทั้งหมดมีความฝันถึงชีวิตที่ดีและสวัสดี",
+                customs2: "ประเพณีภาคเหนือ",
+                customs3: "การถวายเจ้าพ่อของศาลเจ้าในวันยี่สิบสามของเดือนลาเตย์",
+                customs4: "การรักษ์คืนในวันขอวันหยุดและกินเกี๊ยวในวันขอวันหยุด",
+                customs5: "การไปทักทายในวันแรกของปีและให้เงินลูกเล่น",
+                customs6: "การฉลองเทศกาลวันขวัญเจ้ากงในวันสิบห้าแห่งเดือนมกราคม",
+                customs7: "สถานการณ์ของงานเฉลิมฉลองในถนนเทียนตั้งในปักกิ่ง",
+                customs8: "ประเพณีภาคใต้",
+                customs9: "การทำความสะอาดในวันยี่สิบสี่ของเดือนลาเตย์",
+                customs10: "เชยเช้าในวันแรกของปีและกินขนมเปียก",
+                customs11: "การแสดงเต้นวาลีและเต้นเสือเพื่อฉลองปีใหม่",
+                customs12: "การไปห้างหยิบไม้ดอกมาประดับวันตรุษจีนในตลาดไม้ดอก",
+                customs13: "การแสดงเต้นวาลีในโอเซี่ยนเฟซ Shan ในจังหวัดกुआงตุ้ง",
+                customs14: "ลักษณะเฉพาะของชงชิง",
+                customs15: "เป็นสถานที่ของมหาวิทยาลัยสิฉูอัน ชงชิงมีประเพณีของเทศกาลวันตรุษจีนที่ผสมผสานระหว่างวัฒนธรรมบาปูยูและวัฒนธรรมของผู้อพยพ: ",
+                customs16: "งานเฉลิมฉลองในหมู่บ้าน磁器口 (<a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">เว็บไซต์ของสำนักวัฒนธรรมและการท่องเที่ยวของเขตชาปิงปา</a>)",
+                customs17: "ถุงทอดไฟแดงเพื่อถวายถึงครอบครัว",
+                customs18: "การแสดงเสียงร้องของจิอวังฮ่าวเจ",
+                customs19: "ประชากรในงานเฉลิมฉลองวันตรุษจีนใน磁器口",
+                customs20: "เบราว์เซอร์ของคุณไม่สนับสนุนการ再生ภาพยนตร์",
+                customs21: "นักศึกษาชาวต่างชาติของมหาวิทยาลัยสิฉูอันได้สัมผัสการเขียนข้อความในผ้าแดงในเทศกาลวันตรุษจีน",
+                section3: "สาม、รสชาติของเทศกาลวันตรุษจีนในปาก",
+                food1: "อาหารในเทศกาลวันตรุษจีนไม่เพียงแต่ทำให้ความรู้สึกในรสชาติได้พูดถึงแต่ยังมีความหมายทางวัฒนธรรมที่มีความเป็นสิริและโชคชะตา และเป็นการแสดงให้เห็นถึงวัฒนธรรมการกินของชาวจีนอย่างครบถ้วน",
+                food2: "เกี๊ยว",
+                food3: "อาหารที่จำเป็นในเทศกาลวันตรุษจีนภาคเหนือ มีรูปร่างคล้ายกับยาง bawang ซึ่งเป็นสัญลักษณะของความเป็นรICH ทุกปี มหาวิทยาลัยสิฉูอันมีการจัด Competitions ในการทำเกี๊ยวสำหรับนักศึกษาชาวต่างชาติ",
+                food4: "ดูวิดีโอสอนวิธีทำ",
+                food5: "ขนมเปียก",
+                food6: "ลักษณะเฉพาะของภาคใต้ มีความหมายทางวัฒนธรรมว่า\"ขึ้นไปในทุกปี\" มหาวิทยาลัยสิฉูอันมีขนมเปียกในรสชาติดiversified ในช่วงเทศกาลวันตรุษจีน",
+                food7: "ถุงทอดไฟแดงของชงชิง",
+                food8: "สีแดงและแผ่นดินแดงเป็นสัญลักษณะของความสำเร็จและความเจริญรุ่งเรือง และถุงทอดไฟแดงสำหรับครอบครัวแสดงให้เห็นถึงความร้อนรนของชาวบาปูยู สอบความรู้เพิ่มเติม: <a href=\"https://www.cqhotpot.com\" target=\"_blank\">สมาคมถุงทอดไฟแดงของชงชิง</a>",
+                section4: "สี่、การแสดงความยินดีในภาษาแบบ đaภาษา",
+                language1: "ในฐานะวิทยาลัยมีลักษณะภาษาต่างชาติ สถาปนิกและนักศึกษาของมหาวิทยาลัยสิฉูอันสื่อความยินดีในเทศกาลวันตรุษจีนใน 22 ภาษา: ",
+                language2: "再生",
+                language3: "ศึกษาเพิ่มเติมเกี่ยวกับการแปลวัฒนธรรมของเทศกาลวันตรุษจีน: <a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">สาธารณสัมพันธ์วิชาการของมหาวิทยาลัยสิฉูอันและวารสาร《外国语文》</a>",
+                section5: "ห้า、งานเฉลิมฉลองทั่วโลก",
+                global1: "ตามที่วัฒนธรรมของประเทศจีนออกไปทั่วโลก เทศกาลวันตรุษจีนได้กลายเป็นเทศกาลทั่วโลก: ",
+                global2: "นิวยอร์ค",
+                global3: "การนับถอยหลังในเทศกาลวันตรุษจีนในย่านทายวันและอาคารอิมเปรียลมอนท์ถูกสว่างด้วยสีแดงของประเทศจีน",
+                global4: "การแสดงเต้นเสือในหมู่บ้านจีนในนิวยอร์ค",
+                global5: "ลอนดอน",
+                global6: "งานเฉลิมฉลองวันตรุษจีนในทาราฟาแกลร์สแควร์ ซึ่งเป็นงานที่ใหญ่ที่สุดในยุโรป",
+                global7: "การวิ่งประมงในงานเฉลิมฉลองวันตรุษจีนในลอนดอน",
+                global8: "ความร่วมมือระหว่างประเทศของมหาวิทยาลัยสิฉูอัน",
+                global9: "มหาวิทยาลัยของเราได้ร่วมมือกับมหาวิทยาลัยหลายแห่งทั่วโลกในการจัดกิจกรรมในเทศกาลวันตรุษจีน: ",
+                global10: "งานเฉลิมฉลองวันตรุษจีนของมหาวิทยาลัยเทคโนโลยีซินดนีในออสเตรเลีย",
+                global11: "สัปดาห์วัฒนธรรมจีนของมหาวิทยาลัยยูซงในเกาหลี",
+                global12: "งานฉลองวันตรุษจีนของคงค์มหาวิทยาลัยในวีennie",
+                section6: "หก、กิจกรรมของมหาวิทยาลัยสิฉูอันในเทศกาลวันตรุษจีน",
+                event1: "มหาวิทยาลัยสิฉูอันได้ใช้ความสามารถในการภาษาต่างชาติของตนอย่างเต็มที่และจัดกิจกรรมวัฒนธรรมในเทศกาลวันตรุษจีนหลายอย่าง: ",
+                event2: "การแสดงของทีมเต้นวาลีของนักศึกษาชาวต่างชาติ",
+                event3: "การประกวดเขียนข้อความในผ้าแดงใน 22 ภาษา",
+                event4: "การแจ้งเตือนกิจกรรมในเทศกาลวันตรุษจีนปี 2025",
+                event5: "วันที่ 20 มกราคม: โซเซียลอาหารระหว่างประเทศ (หออาหารในซีร์คิวด้านทิศตะวันตก)",
+                event6: "วันที่ 25 มกราคม: กALAคืนวันตรุษจีนในหลายภาษา (หอประชุมใหญ่)",
+                event7: "วันที่ 1 กุมภาพันธ์: วันสัมผัสวัฒนธรรม truyền thống (สี่แยกหนังสือหอในมหาวิทยาลัย)",
+                event8: "เพื่อดูรายละเอียดเพิ่มเติม โปรดติดตาม: <a href=\"https://www.sisu.edu.cn\" target=\"_blank\">เว็บไซต์ของมหาวิทยาลัยสิฉูอัน</a>",
+                page1: "← หน้าแล้ว: ฉบับพิเศษของวันสุดท้ายของฤดูหนาว",
+                page2: "หน้าถัดไป: ฉบับพิเศษของเทศกาลวันขวัญเจ้ากง →",
+                footer1: "© 2025 ศูนย์传播วัฒนธรรมของมหาวิทยาลัยสิฉูอัน | ที่อยู่: ถนนจองเจ๋อหลงหมายเลข 33, เขตชาปิงปา, เมืองชงชิง",
+                footer2: "โทรศัพท์: 023-65385206 | อีเมล: culture@sisu.edu.cn",
+                footer3: "ส่วนหนึ่งของ素材ถูกจัดเตรียมโดยสมาคมการแลกเปลี่ยนวัฒนธรรมของนักศึกษาชาวต่างชาติของ SISU"           
+         },
+fr: {
+    title: "Fête du Printemps · Nouvel An Chinois",
+    subtitle: "Océan qui embrasse toutes les rivières · Savoir qui traverse les cultures | Transmettre la beauté du Nouvel An par les langues",
+    nav1: "Origines",
+    nav2: "Coutumes régionales",
+    nav3: "Saveurs festives", 
+    nav4: "Vœux multilingues",
+    nav5: "Célébrations mondiales",
+    nav6: "Événements SISU",
+    section1: "I. Origines historiques",
+    origin1: "La Fête du Printemps, également appelée Nouvel An lunaire, est la fête traditionnelle la plus importante de Chine avec plus de 4000 ans d'histoire. Selon le Classique des Poèmes et les Annales des Tang, ses origines remontent aux cérémonies sacrificielles de la dynastie Shang, officialisées sous les Han.",
+    origin2: "Légende du Nian",
+    origin3: "La légende raconte qu'un monstre nommé Nian dévorait les hommes chaque veille du Nouvel An. Les gens découvrirent que Nian craignait la couleur rouge et les bruits, donnant naissance aux coutumes des inscriptions rouges et pétards.",
+    origin4: "Signification culturelle",
+    origin5: "Incarnant la philosophie chinoise de l'« harmonie entre Ciel et Homme », elle intègre culte ancestral, renouveau et accueil de la prospérité, en parfaite résonance avec la devise de SISU « Inclusive comme l'océan ».",
+    origin6: "Extrait documentaire : Évolution historique",
+    origin7: "Sacrifice représenté sur brique Han",
+    origin8: "Peinture folklorique du Nian",
+    section2: "II. Coutumes Nord-Sud",
+    customs1: "Les vastes territoires chinois abritent des traditions variées, toutes porteuses d'espoirs en une vie meilleure.",
+    customs2: "Traditions du Nord",
+    customs3: "23e jour : Culte au Dieu du Foyer",
+    customs4: "Veillée avec raviolis",
+    customs5: "Étrennes du 1er jour",
+    customs6: "Fête des Lanternes",
+    customs7: "Foire du Temple de la Terre (Pékin)",
+    customs8: "Traditions du Sud", 
+    customs9: "24e jour : Grand nettoyage",
+    customs10: "Thé du matin avec gâteaux de riz",
+    customs11: "Danses du dragon et du lion",
+    customs12: "Marché aux fleurs printanier",
+    customs13: "Danse du dragon à Foshan",
+    customs14: "Spécificités de Chongqing",
+    customs15: "Siège de SISU, Chongqing allie culture Ba-Yu et traditions migrantes :",
+    customs16: "Foire ancienne de Ciqikou (<a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">Bureau culturel de Shapingba</a>)",
+    customs17: "Banquet familial au hotpot",
+    customs18: "Chants des bateliers du Yangzi",
+    customs19: "Foule à la foire de Ciqikou",
+    customs20: "Navigateur non compatible",
+    customs21: "Étudiants étrangers écrivant des sentences",
+    section3: "III. Saveurs symboliques",
+    food1: "Les mets du Nouvel An portent des sens propitiatoires, incarnant l'essence culinaire chinoise.",
+    food2: "Raviolis",
+    food3: "Spécialité nordique en forme de lingot. Concours annuel de confection à SISU.",
+    food4: "Voir tutoriel",
+    food5: "Gâteau de riz",
+    food6: "Symbole de promotion annuelle. Variétés multiples à la cantine SISU.",
+    food7: "Hotpot de Chongqing",
+    food8: "Rouge prospère, symbole d'unité. Plus d'infos : <a href=\"https://www.cqhotpot.com\" target=\"_blank\">Association du Hotpot</a>",
+    section4: "IV. Vœux multilingues",
+    language1: "Avec ses 22 langues enseignées, SISU transmet les vœux du Nouvel An :",
+    language2: "Écouter",
+    language3: "Recherches en traduction culturelle : <a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">Revue de Philologie Étrangère</a>",
+    section5: "V. Célébrations mondiales",
+    global1: "Le Nouvel An chinois devient une fête mondiale :",
+    global2: "New York",
+    global3: "Compte à rebours à Times Square, Empire State en rouge",
+    global4: "Danse du lion à Chinatown",
+    global5: "Londres",
+    global6: "Célébrations à Trafalgar Square (plus grande d'Europe)",
+    global7: "Parade londonienne",
+    global8: "Coopérations internationales",
+    global9: "Événements avec universités partenaires :",
+    global10: "UTS Sydney",
+    global11: "Université Woosong (Corée)",
+    global12: "Institut Confucius de Vienne",
+    section6: "VI. Événements SISU",
+    event1: "SISU organise des activités culturelles multilingues :",
+    event2: "Danse du dragon par étudiants internationaux",
+    event3: "Concours de sentences en 22 langues",
+    event4: "Programme 2025",
+    event5: "20/01 : Festival culinaire",
+    event6: "25/01 : Gala multilingue",
+    event7: "01/02 : Journée culturelle traditionnelle",
+    event8: "Détails sur <a href=\"https://www.sisu.edu.cn\" target=\"_blank\">www.sisu.edu.cn</a>",
+    page1: "← Page précédente : Solstice d'hiver",
+    page2: "Page suivante : Fête des Lanternes →",
+    footer1: "© 2025 Centre Culturel SISU | Adresse : 33 Zhuangzhi Lu, Shapingba, Chongqing",
+    footer2: "Tél : +86-23-65385206 | Email : culture@sisu.edu.cn",
+    footer3: "Matériel fourni par l'Association des Étudiants Internationaux"
+},
+         de: {
+               title: "Frühlingsfest · Chinesisches Neujahr",
+                subtitle: "Breite Toleranz und Weltoffenheit | Brücken bauen mit Sprachen, Schönheit des Frühlingsfestes vermitteln",
+                nav1: "Ursprung des Frühlingsfestes",
+                nav2: "Bräuche im Norden und Süden",
+                nav3: "Der Geschmack des Neujahrs auf der Zunge",
+                nav4: "Neujahrsgrüße in mehreren Sprachen",
+                nav5: "Weltweite Feiern",
+                nav6: "Aktivitäten der Sichuan International Studies University",
+                section1: "一、Ursprung des Frühlingsfestes",
+                origin1: "Das Frühlingsfest, auch Lunar Neujahr genannt, ist das wichtigste traditionelle Festival in China und hat eine Geschichte von über 4000 Jahren. Laut den Aufzeichnungen in \"Die Book of Odes\" und \"Geschichte der Tang-Dynastie\" hat das Frühlingsfest seinen Ursprung in den Opferhandlungen am Jahresanfang während der Shang-Dynastie. Es wurde offiziell während der Han-Dynastie als nationale Feier festgelegt.",
+                origin2: "Die Legende des Nian-Monsters",
+                origin3: "Es heißt, dass es in alten Zeiten ein Monster namens \"Nian\" gab, das jedes Neujahrsabend herauskam und Menschen fraß. Später fanden die Menschen heraus, dass das Nian-Monster Rot und laute Geräusche fürchtete. Somit entstanden die Bräuche, rote Springbrunnen zu kleben und Feuerwerkskörper zu zünden.",
+                origin4: "Kulturelle Bedeutung",
+                origin5: "Das Frühlingsfest spiegelt das chinesische philosophische Konzept der Harmonie zwischen Mensch und Natur wider. Es integriert vielfältige kulturelle Bedeutungen wie Opferhandlungen für die Ahnen, das Abschütteln des Alten und das Begrüßen des Neuen sowie das Empfangen von Glück und Segen. Dies entspricht vollkommen dem Geist des Mottoes der Sichuan International Studies University: \"Breite Toleranz\".",
+                origin6: "Ausschnitt aus dem Dokumentarfilm \"Die historische Entwicklung des Frühlingsfestes\"",
+                origin7: "Opferhandlungen während des Frühlingsfestes auf der gemalten Ziegelplatte der Han-Dynastie",
+                origin8: "Volkskunstmalerei der Legende des Nian-Monsters",
+                section2: "二、Bräuche im Norden und Süden",
+                customs1: "China ist ein Land mit einem großen Territorium. Die Bräuche des Frühlingsfestes im Norden und Süden haben jeweils ihre eigenen Merkmale, aber alle drücken den Wunsch der Menschen nach einem besseren Leben aus.",
+                customs2: "Bräuche im Norden",
+                customs3: "Opfer für den Küchengott am 23. Tag des 12. Mondmonats",
+                customs4: "Wachsamkeit am Neujahrsabend und Essens von Jiaozi (chinesische Teigtaschen)",
+                customs5: "Neujahrswünsche am ersten Tag des Mondneujahrs und Geben von roten Geschenkbeuteln",
+                customs6: "Feiern des Laternenfestes am 15. Tag des ersten Mondmonats",
+                customs7: "Das Prunkvolle Erscheinungsbild der Ditan-Tempelmarkthalle in Peking",
+                customs8: "Bräuche im Süden",
+                customs9: "Große Reinigung am 24. Tag des 12. Mondmonats",
+                customs10: "Frühstückstee mit Klebreisnudeln am ersten Tag des Mondneujahrs",
+                customs11: "Tanz der Drachen und Löwen zum Neujahrfeiern",
+                customs12: "Besuchen des Blumenmarktes und Kauf von Neujahrsblumen",
+                customs13: "Die Drachentanzeinlage in Foshan, Guangdong",
+                customs14: "Eigenschaften von Chongqing",
+                customs15: "Als Standort der Sichuan International Studies University integriert das Frühlingsfest in Chongqing die Merkmale der Bayu-Kultur und der Einwandererkultur:",
+                customs16: "Die Frühlingsfest-Marktbrücke im Altendorf Ciqikou ( <a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">Die offizielle Website der Kultur- und Tourismusverwaltung des Shapingba-Bezirks</a> )",
+                customs17: "Das Familientreffen mit Chongqing-Hotpot",
+                customs18: "Die Aufführung des Chuanjiang-Liedes",
+                customs19: "Die Menschenmenge bei der Ciqikou-Frühlingsfest-Marktbrücke",
+                customs20: "Ihr Browser unterstützt das Videoabspielen nicht.",
+                customs21: "Die internationalen Studenten der Sichuan International Studies University erleben das Schreiben von Springbrunnen",
+                section3: "三、Der Geschmack des Neujahrs auf der Zunge",
+                food1: "Die Speisen des Frühlingsfestes befriedigen nicht nur den Gaumen, sondern enthalten auch glückliche Bedeutungen. Sie sind die konzentrierte Manifestation der chinesischen Esskultur.",
+                food2: "Jiaozi (chinesische Teigtaschen)",
+                food3: "Ein unentbehrliches Gericht für das Frühlingsfest im Norden. Sie ähneln Goldbarren und symbolisieren Reichtum. Die Kochkunstvereinigung der Sichuan International Studies University organisiert jedes Jahr den \"Wettbewerb für das Zubereiten von Jiaozi für internationale Studenten\".",
+                food4: "Anleitungsvideo ansehen",
+                food5: "Niangao (Klebreisnudeln)",
+                food6: "Eine Spezialität aus dem Süden mit der glücklichen Bedeutung \"Jahr für Jahr höher steigen\". Die Kantine der Sichuan International Studies University serviert mehrere Sorten von Niangao während des Frühlingsfestes.",
+                food7: "Chongqing-Hotpot",
+                food8: "Das Rote symbolisiert Prosperität. Die Familientreffen-Hotpot spiegelt die Herzlichkeit der Region Bayu wider. Weitere Informationen: <a href=\"https://www.cqhotpot.com\" target=\"_blank\">Die Chongqing-Hotpot-Vereinigung</a>",
+                section4: "四、Neujahrsgrüße in mehreren Sprachen",
+                language1: "Als Universität mit einer Spezialisierung auf Fremdsprachen übermitteln die Lehrer und Studenten der Sichuan International Studies University Neujahrsgrüße in 22 Sprachen:",
+                language2: "Abspielen",
+                language3: "Weitere Informationen über die Forschung zur Übersetzung der Frühlingsfestkultur: <a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">Die Zeitschrift \"Foreign Languages and Literatures\" der Forschungsabteilung der Sichuan International Studies University</a>",
+                section5: "五、Weltweite Feiern",
+                global1: "Mit der Ausbreitung der chinesischen Kultur im Ausland ist das Frühlingsfest zu einem weltweiten Festival geworden:",
+                global2: "New York",
+                global3: "Der Countdown des Frühlingsfestes am Times Square, das Empire State Building wird in chinesischem Rot beleuchtet",
+                global4: "Die Löwentanzeinlage im Chinatown von New York",
+                global5: "London",
+                global6: "Die Frühlingsfestfeier am Trafalgar Square, die größte in Europa",
+                global7: "Die Frühlingsfestparade in London",
+                global8: "Die internationale Zusammenarbeit der Sichuan International Studies University",
+                global9: "Unsere Universität hat mit vielen Universitäten weltweit zusammengearbeitet, um Frühlingsfestaktivitäten zu organisieren:",
+                global10: "Das Frühlingsfestgala der Universität der Technologie von Sydney, Australien",
+                global11: "Die chinesische Kulturwoche an der Woosong-Universität in Südkorea",
+                global12: "Das Neujahrskonzert des Konfuzius-Instituts in Wien",
+                section6: "六、Aktivitäten des Frühlingsfestes an der Sichuan International Studies University",
+                event1: "Die Sichuan International Studies University nutzt ihre Vorzüge in Fremdsprachen voll aus und organisiert vielfältige kulturelle Aktivitäten des Frühlingsfestes:",
+                event2: "Die Drachentanzeinlage der internationalen Studenten",
+                event3: "Der Wettbewerb für das Schreiben von Springbrunnen in 22 Sprachen",
+                event4: "Die Ankündigung der Frühlingsfestaktivitäten im Jahr 2025",
+                event5: "Den 20. Januar: Das internationale Gourmetfest (Kantine im Westbezirk)",
+                event6: "Den 25. Januar: Das Frühlingsfestgala in mehreren Sprachen (Großer Saal)",
+                event7: "Den 1. Februar: Der Tag des kulturellen Erlebnisses der traditionellen Kultur (Platz vor der Bibliothek)",
+                event8: "Weitere Details finden Sie auf: <a href=\"https://www.sisu.edu.cn\" target=\"_blank\">Die offizielle Website der Sichuan International Studies University</a>",
+                page1: "← Vorherige Seite: Das Thema des Wintersonnwendfestes",
+                page2: "Nächste Seite: Die Spezialausgabe des Laternenfestes →",
+                footer1: "© 2025 Das Kulturverbreitungs- und Vermittlungszentrum der Sichuan International Studies University | Adresse: Nr. 33, Zhuangzhi Straße, Shapingba Bezirk, Chongqing",
+                footer2: "Telefon: 023-65385206 | E-Mail: culture@sisu.edu.cn",
+                footer3: "Einige Materialien wurden von der SISU International Student Cultural Exchange Association bereitgestellt" 
+         },
+ ru: {
+    title: "Праздник Весны · Китайский Новый год",
+    subtitle: "Вбирая реки, постигая мир | Передавая красоту праздника через языки",
+    nav1: "История праздника",
+    nav2: "Традиции регионов",
+    nav3: "Праздничные яства",
+    nav4: "Поздравления на языках", 
+    nav5: "Мировые празднования",
+    nav6: "Мероприятия SISU",
+    section1: "I. Исторические корни",
+    origin1: "Праздник Весны, также известный как Лунный Новый год, главный традиционный праздник Китая с 4000-летней историей. Согласно «Книге песен» и летописям Тан, берёт начало от ритуалов эпохи Шан, официально став общенациональным праздником при Хань.",
+    origin2: "Легенда о Нянь",
+    origin3: "По преданию, чудовище Нянь пожирало людей в канун Нового года. Люди обнаружили, что Нянь боится красного цвета и шума, что породило традиции красных надписей и хлопушек.",
+    origin4: "Культурное значение",
+    origin5: "Воплощает философию «единства Неба и Человека», сочетая культ предков, обновление и привлечение благополучия, что созвучно духу SISU «Вбирая всё многообразие».",
+    origin6: "Документальный фильм «Эволюция праздника»",
+    origin7: "Новогодний ритуал на ханьском кирпиче",
+    origin8: "Народная картина о Нянь",
+    section2: "II. Северные и южные традиции",
+    customs1: "Огромная территория Китая породила разнообразные традиции, объединённые верой в лучшее будущее.",
+    customs2: "Традиции Севера",
+    customs3: "23-й день: Поклонение Богу очага",
+    customs4: "Новогоднее бдение с пельменями",
+    customs5: "Поздравления и хунбао 1-го дня",
+    customs6: "Фестиваль фонарей 15-го дня",
+    customs7: "Ярмарка в храме Земли (Пекин)",
+    customs8: "Традиции Юга", 
+    customs9: "24-й день: Генеральная уборка",
+    customs10: "Утренний чай с няньгао",
+    customs11: "Танцы дракона и льва",
+    customs12: "Весенний цветочный рынок",
+    customs13: "Танец дракона в Фошань",
+    customs14: "Особенности Чунцина",
+    customs15: "Город SISU Чунцин сочетает культуру Ба-Ю и мигрантские традиции:",
+    customs16: "Ярмарка в древнем городе Цыцикоу (<a href=\"https://www.cqspb.gov.cn\" target=\"_blank\">Официальный сайт Управления культуры Шапинба</a>)",
+    customs17: "Семейный хого-ужин",
+    customs18: "Песни лодочников Янцзы",
+    customs19: "Толпа на ярмарке Цыцикоу",
+    customs20: "Ваш браузер не поддерживает видео",
+    customs21: "Иностранные студенты SISU пишут парные надписи",
+    section3: "III. Символические блюда",
+    food1: "Праздничные блюда несут символическое значение, отражая суть китайской кухни.",
+    food2: "Цзяоцзы",
+    food3: "Северные пельмени в форме слитков. Ежегодный конкурс лепки в SISU.",
+    food4: "Смотреть урок",
+    food5: "Няньгао",
+    food6: "Южный рисовый пирог символизирует рост. В столовых SISU подают разные виды.",
+    food7: "Чунцинское хого",
+    food8: "Красный цвет означает процветание. Подробнее: <a href=\"https://www.cqhotpot.com\" target=\"_blank\">Ассоциация хого</a>",
+    section4: "IV. Многоязычные поздравления",
+    language1: "SISU представляет новогодние поздравления на 22 языках:",
+    language2: "Слушать",
+    language3: "Исследования перевода: <a href=\"https://www.sisu.edu.cn/kyc/\" target=\"_blank\">Журнал «Иностранная филология»</a>",
+    section5: "V. Глобальные празднования",
+    global1: "Китайский Новый год стал мировым праздником:",
+    global2: "Нью-Йорк",
+    global3: "Обратный отсчёт на Таймс-сквер, Эмпайр-стейт-билдинг в красном",
+    global4: "Танец льва в Чайнатауне",
+    global5: "Лондон",
+    global6: "Празднование на Трафальгарской площади (крупнейшее в Европе)",
+    global7: "Новогодний парад",
+    global8: "Международное сотрудничество SISU",
+    global9: "Совместные мероприятия с вузами:",
+    global10: "UTS Сидней",
+    global11: "Университет Усон (Корея)",
+    global12: "Институт Конфуция в Вене",
+    section6: "VI. Мероприятия SISU",
+    event1: "SISU проводит культурные мероприятия:",
+    event2: "Танец дракона иностранными студентами",
+    event3: "Конкурс парных надписей на 22 языках",
+    event4: "Программа 2025",
+    event5: "20.01: Фестиваль кухни",
+    event6: "25.01: Многоязычный гала-концерт",
+    event7: "01.02: День традиционной культуры",
+    event8: "Подробности на <a href=\"https://www.sisu.edu.cn\" target=\"_blank\">www.sisu.edu.cn</a>",
+    page1: "← Предыдущая: Зимнее солнцестояние",
+    page2: "Следующая: Фестиваль фонарей →",
+    footer1: "© 2025 Культурный центр SISU | Адрес: ул. Чжуанчжи, 33, Шапинба, Чунцин",
+    footer2: "Тел.: +86-23-65385206 | Email: culture@sisu.edu.cn",
+    footer3: "Материалы предоставлены Ассоциацией иностранных студентов"   }
+        };
+ 
+
+        // 语言切换功能
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                document.querySelector('.lang-btn.active').classList.remove('active');
+                this.classList.add('active');
+                
+                // 更新所有带data-i18n属性的元素
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.dataset.i18n;
+                    if (i18n[lang] && i18n[lang][key]) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.value = i18n[lang][key];
+                        } else {
+                            el.innerHTML = i18n[lang][key];
+                        }
+                    }
+                });
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // 更新导航栏活动状态
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // 监听滚动更新导航栏
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // 模拟音频播放
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('音频播放功能需连接服务器实现\n此处为演示效果');
+            });
+        });
+
+        // 翻页按钮
+        document.querySelectorAll('.page-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('翻页功能需连接后端数据库\n此处为演示效果');
+            });
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
